@@ -34,3 +34,10 @@ echo "<hr>";
 var_dump(2 <= 5);
 var_dump(5 <= 2);
 var_dump(2 <= 2);
+echo "<hr>";
+
+//maior ou igual
+var_dump(2 >= 5);
+var_dump(5 >= 2);
+var_dump(2 >= 2);
+echo "<hr>";
