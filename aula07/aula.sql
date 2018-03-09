@@ -33,3 +33,6 @@ SELECT * FROM usuarios u LEFT JOIN posts p ON u.id = posts.usuario_id;
 sudo apt install php7.0-mysql
 
 sudo service apache2 restart
+
+CREATE USER 'hilton'@'localhost' IDENTIFIED BY '@da4linux';
+GRANT ALL PRIVILEGES ON *.* TO 'hilton'@'localhost';
