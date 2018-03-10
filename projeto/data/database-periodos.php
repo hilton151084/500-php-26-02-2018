@@ -4,7 +4,7 @@ require_once 'conexao.php';
 
 function listaPeriodos (){
 	
-	$con = conecta()
+	$con = conecta();
 
 	$sql = "SELECT * FROM tb_periodos ORDER BY id";
 	$result = pg_query($con,$sql);
@@ -20,13 +20,15 @@ function listaPeriodosPorId ($id){
 
 	$sql = "SELECT * FROM tb_periodos WHERE id = {id}";
 	$result = pg_query($con,$sql);
-	$usuarios = pg_fetch_assoc($result);
+	$tb_periodos = pg_fetch_assoc($result);
 }
 
 function inserePeriodo (array $periodo){
 	$con = conecta();
+
 	$sql = "INSERT INTO tb_periodos (descricao) 
-			VALUES('{$descricao['descricao']}')";
+			VALUES('{$periodo['descricao']}')";
+
 	pg_query($con,$sql);
 
 	desconecta($con);

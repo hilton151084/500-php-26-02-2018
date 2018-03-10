@@ -1,19 +1,15 @@
 <?php include 'topo.php' ?>
-<?php include 'database-usuarios.php' ?>
+<?php include '../../data/database-periodos.php' ?>
 
 <div class="container">
 	<div class="page-header">
-		<h2>Novo <small>Usuário</small></h2>	
+		<h2>Novo <small>Período</small></h2>	
 	</div>
 
 	<form action="#" method="POST">
 		<div class="form-group">
-			<label for="usuario">Usuário</label>
-			<input type="text" name="usuario" class="form-control" placeholder="Usuário" required>
-		</div>
-		<div class="form-group">
-			<label for="senha">Senha</label>
-			<input type="password" name="senha" class="form-control" required>
+			<label for="periodo">Periodo</label>
+			<input type="text" name="periodo" class="form-control" placeholder="Periodo" required>
 		</div>
 
 		<a href="index.php" class="btn btn-warning">Voltar</a>
@@ -24,12 +20,11 @@
 <?php 
 	if (!empty($_POST)){
 
-		$usuario = [
-			'usuario' => $_POST['usuario'],
-			'senha' => $_POST['senha']
+		$periodo = [
+			'descricao' => $_POST['periodo'],
 	];
 
-	insereUsuario($usuario);
+	inserePeriodo($periodo);
 	header("location:index.php");
 }
 
